@@ -4,11 +4,21 @@
     <form class="login-form" #loginForm="ngForm">
 
       <mat-form-field>
-        <input matInput ngModel #email="ngModel" name="email" type="email" placeholder="Email">
+        <input matInput ngModel 
+          #email="ngModel" 
+          name="email" 
+          type="email" 
+          placeholder="Email"
+          required>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput ngModel #password="ngModel" name="password" type="password" placeholder="Password">
+        <input matInput ngModel 
+          #password="ngModel" 
+          name="password" 
+          type="password" 
+          placeholder="Password"
+          required>
       </mat-form-field>
 
       <button mat-raised-button color="primary" (click)="login(loginForm)">
@@ -16,7 +26,7 @@
       </button>
     </form>
     <div class="form-val">
-      {{email.value + '' + password.value}}
+      {{email.valid + '' + password.valid}}
     </div>
   </mat-card-content>
 </mat-card>
