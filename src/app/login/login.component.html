@@ -10,6 +10,7 @@
           type="email" 
           placeholder="Email"
           required>
+        <mat-error *ngIf="email.errors?.required">The email is mandatory</mat-error>
       </mat-form-field>
 
       <mat-form-field>
@@ -26,7 +27,7 @@
       </button>
     </form>
     <div class="form-val">
-      {{email.valid + '' + password.valid}}
+      {{ email.errors | json }}  ------- {{ password.errors | json }}
     </div>
   </mat-card-content>
 </mat-card>
