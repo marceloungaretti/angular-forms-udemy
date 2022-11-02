@@ -5,8 +5,10 @@
       (ngSubmit)="login(loginForm, $event)">
 
       <mat-form-field>
-        <input matInput ngModel name="email" type="email" placeholder="Email"
+        <input matInput name="email" type="email" placeholder="Email"
+          ngModel [ngModelOptions]="{ updateOn: 'blur' }"
           #email="ngModel" 
+          (ngModelChange)="onEmailChange($event)"
           required minlength="3" maxlength="20" email>
         <mat-error *ngIf="email.errors?.required">The email is mandatory.</mat-error>
         <mat-error *ngIf="email.errors?.minlength">Your email must have at least
@@ -26,7 +28,7 @@
       </button>
     </form>
     <div class="form-val">
-      {{ email.errors | json }}  ////////////// {{ password.errors | json }}
+      {{ email.value | json }}
     </div>
   </mat-card-content>
 </mat-card>

@@ -13,7 +13,12 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
 
   }
+
   login(loginForm: NgForm, submit) {
     console.log(loginForm.value, loginForm.valid, submit);
+  }
+
+  onEmailChange(change){
+    console.log(change);
   }
 }
