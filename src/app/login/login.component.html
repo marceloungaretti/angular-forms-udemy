@@ -6,7 +6,7 @@
 
       <mat-form-field>
         <input matInput name="email" type="email" placeholder="Email"
-          ngModel
+          [ngModel]="val.email"
           #email="ngModel"
           required minlength="3" maxlength="20" email>
         <mat-error *ngIf="email.errors?.required">The email is mandatory.</mat-error>
@@ -16,7 +16,8 @@
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput ngModel name="password" type="password" placeholder="Password"
+        <input matInput name="password" type="password" placeholder="Password"
+          [ngModel]="val.password"
           #password="ngModel" 
           required>
       </mat-form-field>
