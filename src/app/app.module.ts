@@ -43,6 +43,7 @@ import {FileUploadComponent} from './file-upload/file-upload.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {LoginReactiveComponent} from './login-reactive/login-reactive.component';
 import { PasswordStrengthDirective } from './directives/password-strength.directive';
+import { OnlyOneErrorPipe } from './pipes/only-one-errors.pipe';
 
 @NgModule({
     declarations: [
@@ -60,7 +61,8 @@ import { PasswordStrengthDirective } from './directives/password-strength.direct
         AddressFormComponent,
         FileUploadComponent,
         LoginReactiveComponent,
-        PasswordStrengthDirective
+        PasswordStrengthDirective,
+        OnlyOneErrorPipe
     ],
     imports: [
         BrowserModule,
