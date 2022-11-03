@@ -25,7 +25,8 @@
         </div>
       </ng-container>
 
-      <button mat-raised-button color="primary" [disabled]="!form.valid">
+      <button mat-raised-button color="primary" [disabled]="!form.valid"
+        (click)="login()">
         Login
       </button>
 

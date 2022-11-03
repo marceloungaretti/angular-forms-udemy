@@ -31,4 +31,7 @@ export class LoginReactiveComponent implements OnInit {
     return this.form.controls['password'];
   }
 
+  login(){
+    console.log(this.form.value);
+  }
 }
