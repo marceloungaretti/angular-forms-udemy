@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { createPasswordStrengthValidator } from '../validators/password-strength.validator';
 
 @Component({
@@ -17,21 +17,26 @@ export class LoginReactiveComponent implements OnInit {
     password: ['', [Validators.required, Validators.minLength(8), createPasswordStrengthValidator()]]
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: NonNullableFormBuilder) { }
 
   ngOnInit() {
 
   }
 
-  get email(){
+  get email() {
     return this.form.controls['email'];
   }
 
-  get password(){
+  get password() {
     return this.form.controls['password'];
   }
 
-  login(){
+  login() {
+    console.log(this.form.value);
+  }
+
+  reset() {
+    this.form.reset();
     console.log(this.form.value);
   }
 }
