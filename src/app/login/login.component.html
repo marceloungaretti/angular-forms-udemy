@@ -1,5 +1,5 @@
 <mat-card class="login-page">
-  <mat-card-title>Login</mat-card-title>
+  <mat-card-title>Login (Template Driven)</mat-card-title>
   <mat-card-content>
     <form class="login-form" #loginForm="ngForm" (ngSubmit)="login(loginForm, $event)">
 
@@ -30,8 +30,8 @@
         Login
       </button>
     </form>
-    <div class="form-val">
+    <!-- <div class="form-val">
       {{ password.errors | json }}
-    </div>
+    </div> -->
   </mat-card-content>
 </mat-card>
