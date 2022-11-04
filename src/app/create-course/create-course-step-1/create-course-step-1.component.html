@@ -10,6 +10,14 @@
   </mat-form-field>
 
   <mat-form-field>
+    <mat-select formControlName="category" placeholder="Select category">
+      <ng-container *ngFor="let category of courseCategories$ | async">
+        <mat-option [value]="category.code">{{category.description}}</mat-option>
+      </ng-container>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
     <input formControlName="releasedAt" matInput [matDatepicker]="releaseDatePicker" 
       placeholder="Release date">
     <mat-datepicker-toggle matSuffix [for]="releaseDatePicker"></mat-datepicker-toggle>
@@ -22,7 +30,6 @@
 
   <mat-form-field appearance="outline">
     <textarea formControlName="longDescription" matInput placeholder="Description">
-
     </textarea>
   </mat-form-field>
 </div>
