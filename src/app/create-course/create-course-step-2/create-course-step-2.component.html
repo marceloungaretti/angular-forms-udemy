@@ -3,5 +3,9 @@
     <mat-radio-button value="free">Free</mat-radio-button>
     <mat-radio-button value="premium">Premium</mat-radio-button>
   </mat-radio-group>
+
+  <mat-form-field>
+    <input formControlName="price" matInput type="number" placeholder="Price">
+  </mat-form-field>
 </div>
 <div class="form-val">{{ form.value | json }}</div>
