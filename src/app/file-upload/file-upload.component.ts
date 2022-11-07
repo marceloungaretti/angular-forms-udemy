@@ -4,7 +4,6 @@ import {catchError, finalize} from 'rxjs/operators';
 import {AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR, Validator} from '@angular/forms';
 import {noop, of} from 'rxjs';
 
-
 @Component({
   selector: 'file-upload',
   templateUrl: "file-upload.component.html",
@@ -12,5 +11,5 @@ import {noop, of} from 'rxjs';
 })
 export class FileUploadComponent {
 
-
+  @Input() requiredFileType: string;
 }
