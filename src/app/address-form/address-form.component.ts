@@ -17,8 +17,7 @@ import {noop, Subscription} from 'rxjs';
 })
 export class AddressFormComponent {
 
-    @Input()
-    legend:string;
+    @Input() legend: string;
 
     form: FormGroup = this.fb.group({
         addressLine1: [null, [Validators.required]],
