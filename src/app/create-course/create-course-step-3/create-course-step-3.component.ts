@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'create-course-step-3',
@@ -8,7 +8,26 @@ import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class CreateCourseStep3Component {
 
-  form: FormGroup = this.fb.group({});
+  form: FormGroup = this.fb.group({
+    lessons: this.fb.array([])
+  });
 
-  constructor(private fb: FormBuilder){}
+  constructor(private fb: FormBuilder) { }
+
+  get lessons(){
+    return this.form.controls['lessons'] as FormArray
+  }
+
+  addLesson() {
+    const lessonForm = this.fb.group({
+      title: ['', Validators.required],
+      level: ['beginner', Validators.required]
+    });
+
+    this.lessons.push(lessonForm);
+  }
+
+  deleteLesson(lessonIndex: number){
+    this.lessons.removeAt(lessonIndex);
+  }
 }
