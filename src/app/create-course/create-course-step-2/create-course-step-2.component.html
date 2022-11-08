@@ -4,7 +4,9 @@
     <mat-radio-button value="premium">Premium</mat-radio-button>
   </mat-radio-group>
 
-  <file-upload requiredFileType="image/png"></file-upload>
+  <file-upload formControlName="thumbnail"
+    requiredFileType="image/png">
+  </file-upload>
 
   <mat-form-field>
     <input formControlName="price" matInput type="number" placeholder="Price">
