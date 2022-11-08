@@ -12,3 +12,8 @@
   </button>
 </div>
 
+<mat-progress-bar *ngIf="uploadProgress"
+  class="progress-bar" 
+  mode="determinate"
+  [value]="uploadProgress">
+</mat-progress-bar>
