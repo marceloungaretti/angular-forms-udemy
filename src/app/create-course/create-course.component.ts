@@ -10,6 +10,11 @@ import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
   ]
 })
 export class CreateCourseComponent implements OnInit {
+
   ngOnInit() {
+  }
+
+  submit(step1, step2, step3){
+    console.log('STEP1:', step1, 'STEP2:', step2, 'STEP3:',step3)
   }
 }

@@ -31,8 +31,7 @@ export class CreateCourseStep1Component implements OnInit {
     category: ['BEGINNER', Validators.required],
     releasedAt: [new Date(), Validators.required],
     downloadsAllowed: [false, Validators.required],
-    longDescription: ['', [Validators.required, Validators.minLength(3)]],
-    address: [null, Validators.required]
+    longDescription: ['', [Validators.required, Validators.minLength(3)]]
   });
 
   courseCategories$: Observable<CourseCategory[]>;
